@@ -20,3 +20,8 @@ func main() {
 	gui.MainApp.Window.Show()
 	gui.MainApp.A.Run()
 }
+
+// TODO: reset all entry boxes after taping on any button
+// TODO: validation on entry texts
+// TODO: show dialog boxes for all button actions
+// TODO: check name duplicates on lists and inform client
