@@ -88,6 +88,9 @@ func (panel *AddPanel) namePanelInit(win *fyne.Window) {
 			Name:     panel.nameEntry.Text,
 			ListType: nameType,
 		})
+		panel.listEntry.SetText("")
+		panel.nameEntry.SetText("")
+		dialog.NewInformation("message", "new name added successfuly", *win).Show()
 	})
 	panel.addNameButton.Disable()
 
@@ -112,6 +115,7 @@ func (panel *AddPanel) initListPanel(win *fyne.Window) {
 		oldListTypes := panel.typeSelect.Options
 		panel.typeSelect.SetOptions(append(oldListTypes, panel.listEntry.Text))
 		panel.listEntry.SetText("")
+		panel.nameEntry.SetText("")
 		dialog.NewInformation("message", "new list type added successfuly", *win).Show()
 
 	})
@@ -137,7 +141,7 @@ user =  {Model:{ID:0 CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-0
 */
 func (panel *SearchPanel) initialize() {
 	panel.panel = container.NewVBox()
-	panel.resultBox = widget.NewLabelWithStyle("salam", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
+	panel.resultBox = widget.NewLabelWithStyle("", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
 	panel.resultBox.Importance = widget.HighImportance
 	panel.resultBox.TextStyle = fyne.TextStyle{
 		Bold: true,
